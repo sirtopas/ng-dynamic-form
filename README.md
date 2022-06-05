@@ -1,14 +1,89 @@
-# DynamicForms
+# Dynamic Forms
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+
+A lightweight, reusable form-builder component for Angular: 
+
+`app.component.ts`:
+
+```js
+    testForm: FormInputBase<string | boolean>[] = [
+        new FormTextbox({
+            key: 'title',
+            label: 'Title',
+            type: 'text',
+            required: true,
+        }),
+
+        new FormTextbox({
+            key: 'name',
+            label: 'Name',
+            type: 'text',
+            required: true,
+        }),
+
+        new FormTextbox({
+            key: 'date',
+            label: 'Date',
+            type: 'date',
+            required: true,
+        }),
+
+        new FormTextbox({
+            key: 'file',
+            label: 'File',
+            type: 'file',
+            required: true,
+        }),
+
+        new FormTextbox({
+            key: 'age',
+            label: 'Age',
+            type: 'number',
+            required: true,
+        }),
+
+        new FormTextbox({
+            key: 'password',
+            label: 'Password',
+            type: 'password',
+            required: true,
+        }),
+
+        new FormDropdown({
+            key: 'business-unit',
+            label: 'Business Unit',
+            options: [
+                { key: 'corp', value: 'Corporate' },
+                { key: 'comm', value: 'Commercial' },
+            ],
+            required: true,
+        }),
+
+        new FormCheckbox({
+            key: 'confirmed',
+            label: 'Confirmed',
+            required: true,
+        }),
+    ];
+```
+
+`app.component.html`:
+
+```html
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <h2>My dynamic form</h2>
+            <app-dynamic-form [formFields]="testForm"></app-dynamic-form>
+        </div>
+    </div>
+</div>
+```
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -17,11 +92,3 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
