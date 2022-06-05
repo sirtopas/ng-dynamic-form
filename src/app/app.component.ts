@@ -25,6 +25,34 @@ export class AppComponent {
             required: true,
         }),
 
+        new FormTextbox({
+            key: 'date',
+            label: 'Date',
+            type: 'date',
+            required: true,
+        }),
+
+        new FormTextbox({
+            key: 'file',
+            label: 'File',
+            type: 'file',
+            required: true,
+        }),
+
+        new FormTextbox({
+            key: 'age',
+            label: 'Age',
+            type: 'number',
+            required: true,
+        }),
+
+        new FormTextbox({
+            key: 'password',
+            label: 'Password',
+            type: 'password',
+            required: true,
+        }),
+
         new FormDropdown({
             key: 'business-unit',
             label: 'Business Unit',
