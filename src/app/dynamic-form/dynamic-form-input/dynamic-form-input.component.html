@@ -12,7 +12,7 @@
             </option>
         </select>
 
-        <input *ngSwitchCase="'checkbox'" type="checkbox" [id]="field.key" [name]="field.key"
+        <input *ngSwitchCase="'checkbox'" type="checkbox" [id]="field.key" [name]="field.key" required="field.required"
             [formControlName]="field.key" class="form-check-input" [ngClass]="{'is-invalid' : hasFieldError()}" />
 
         <div class="invalid-feedback d-block" *ngIf="hasFieldError()">
